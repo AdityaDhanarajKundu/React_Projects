@@ -1,10 +1,22 @@
 import { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import PropTypes from "prop-types";
 
-function Question(){
+function Question({title, info}){
     return(
-        <h2>question component</h2>
+        <article className="question">
+            <header>
+                <h4>{title}</h4>
+                <button type="button" className="btn">Button</button>
+            </header>
+            <p>{info}</p>
+        </article>
     );
 }
+
+Question.propTypes = {
+    title: PropTypes.string.isRequired,
+    info: PropTypes.string.isRequired
+};
 
 export default Question;
