@@ -10,3 +10,4 @@ This is done following the course of John Smilga.
 - Tour Catalogue
 - Reviews Page
 - Accordian
+- Menu
