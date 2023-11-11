@@ -3,13 +3,15 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import PropTypes from "prop-types";
 
 function Question({title, info}){
+    const [showInfo, setShowInfo] = useState(false);
+    
     return(
         <article className="question">
             <header>
                 <h4>{title}</h4>
-                <button type="button" className="btn">Button</button>
+                <button type="button" className="btn" onClick={()=>{setShowInfo(!showInfo)}}>Btn</button>
             </header>
-            <p>{info}</p>
+            {showInfo && <p>{info}</p>}
         </article>
     );
 }
