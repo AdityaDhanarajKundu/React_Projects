@@ -1,8 +1,12 @@
-# React + Vite
+# React Accordian UI
+This project is designed for beginners who want to practice building a simple accordion component in React. This interactive UI project allows users to toggle the display of content sections, creating a collapsible accordion-style interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<a href="https://accordion-react-ui.netlify.app/">Preview</a>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- #### Accordion Sections
+Click on each section header to expand and collapse its content.
+- #### Dynamic Content
+Easily customize the content of each section.
+- #### Responsive Design
+The accordion is designed to work seamlessly on various sizes.
