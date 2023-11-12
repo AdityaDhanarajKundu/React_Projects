@@ -1,6 +1,9 @@
-function Categories(){
+function Categories({filterMenu}){
     return(
-        <h2>Categories Component</h2>
+        <div className="btn-container">
+            <button type="button" className="filter-btn" onClick={()=> filterMenu("all")}>All</button>
+            <button type="button" className="filter-btn" onClick={()=> filterMenu("breakfast")}>Breakfast</button>
+        </div>
     );
 }
 
