@@ -1,8 +1,16 @@
-# React + Vite
+# React Tabs
+This is a beginner-level React project that implements a simple job experience tabs interface. Users can view details of different job experiences by clicking on corresponding buttons.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<a href="https://react-tabs-ui.netlify.app" target="_blank">Preview</a>
 
-Currently, two official plugins are available:
+## Overview
+The project fetches job data from an external API and dynamically displays job details using React. It utilizes the useState and useEffect hooks to manage state and handle asynchronous data fetching.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Dynamic rendering of job details based on user selection.
+- Loading indicator while data is being fetched.
+- Responsive design for an optimal user experience.
+
+## Dependencies
+- React : A javascript library for building ui interfaces.
+- react-icons : Icons library for React applications
