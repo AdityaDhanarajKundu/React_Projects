@@ -33,7 +33,7 @@ function App() {
     );
   }
 
-  const {company, title, dates, duties} = jobs[value];
+  const { company, title, dates, duties } = jobs[value];
 
   return (
     <section className="section">
@@ -44,9 +44,14 @@ function App() {
       <div className="jobs-center">
         {/* btn container will be here */}
         <div className="btn-container">
-          {jobs.map((item,index)=>{
-            return(
-              <button type="button" key={item.id} onClick={()=> setValue(index)}>
+          {jobs.map((item, index) => {
+            return (
+              <button
+                type="button"
+                key={item.id}
+                onClick={() => setValue(index)}
+                className={`job-btn ${index === value && "active-btn"}`}
+              >
                 {item.company}
               </button>
             );
@@ -57,8 +62,8 @@ function App() {
           <h3>{title}</h3>
           <h4>{company}</h4>
           <p className="job-date">{dates}</p>
-          {duties.map((duty,index)=>{
-            return(
+          {duties.map((duty, index) => {
+            return (
               <div key={index} className="job-desc">
                 <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
                 <p>{duty}</p>
