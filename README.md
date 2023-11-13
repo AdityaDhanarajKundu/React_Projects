@@ -11,3 +11,5 @@ This is done following the course of John Smilga.
 - Reviews Page
 - Accordian
 - Menu
+- Tabs
+- Slider
