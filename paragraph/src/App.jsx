@@ -8,7 +8,16 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(data.length);
-    setText(data);
+    console.log(count);
+    console.log(typeof count);
+    console.log(parseInt(count));
+    let amount = parseInt(count);
+    if (amount <= 0){
+      setText([]);
+    }else if(amount > data.length){
+      amount = data.length;
+    }
+    setText(data.slice(0, amount));
   }
 
   return (
@@ -20,6 +29,8 @@ function App() {
           type="number"
           name="amount"
           id="amount"
+          min={0}
+          max={data.length}
           value={count}
           onChange={(e) => setCount(e.target.value)}
         />
