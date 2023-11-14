@@ -7,7 +7,8 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("hello world");
+    console.log(data.length);
+    setText(data);
   }
 
   return (
@@ -27,18 +28,11 @@ function App() {
         </button>
       </form>
       <article className="lorem-text">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea
-          ducimus corporis a, unde facilis voluptatem vero consequatur maiores,
-          laborum nam deserunt dolores exercitationem illum delectus obcaecati
-          omnis, est quod.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea
-          ducimus corporis a, unde facilis voluptatem vero consequatur maiores,
-          laborum nam deserunt dolores exercitationem illum delectus obcaecati
-          omnis, est quod.
-        </p>
+        {text.map((item,index)=>{
+          return(
+            <p key={index}>{item}</p>
+          );
+        })}
       </article>
     </section>
   );
