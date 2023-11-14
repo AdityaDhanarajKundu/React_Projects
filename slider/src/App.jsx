@@ -7,12 +7,24 @@ function App() {
   const [people,setPeople] = useState(data);
   const [index,setIndex] = useState(2); // index of the people array
 
+  // do this condition checking every time the index and the state value of the people changes
   useEffect(()=>{
     const lastIndex = people.length-1;
     if(index<0){
       setIndex(lastIndex);
     }
+    if(index>lastIndex){
+      setIndex(0);
+    }
   },[index,people]);
+
+  // setInterval everytime the index changes
+  useEffect(()=>{
+    let slider = setInterval(()=>{
+      setIndex(index+1);
+    },3000);
+    return ()=>clearInterval(slider);
+  },[index]);
   
   return (
     <section className='section'>
