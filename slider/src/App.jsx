@@ -6,6 +6,13 @@ import data from './data';
 function App() {
   const [people,setPeople] = useState(data);
   const [index,setIndex] = useState(2); // index of the people array
+
+  useEffect(()=>{
+    const lastIndex = people.length-1;
+    if(index<0){
+      setIndex(lastIndex);
+    }
+  },[index,people]);
   
   return (
     <section className='section'>
