@@ -13,3 +13,4 @@ This is done following the course of John Smilga.
 - Menu
 - Tabs
 - Slider
+- Random Paragraph Generator
