@@ -14,3 +14,4 @@ This is done following the course of John Smilga.
 - Tabs
 - Slider
 - Random Paragraph Generator
+- Color Generator 
