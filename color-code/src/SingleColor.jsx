@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import rgbToHex from "./utils";
 import PropTypes from "prop-types";
 
 function SingleColor({ rgb, weight, index, hexColor}) {
@@ -8,7 +7,7 @@ function SingleColor({ rgb, weight, index, hexColor}) {
 //   const hex = rgbToHex(...rgb); // to convert the rgb number array into a hex value
 
   return (
-    <article className={`color`} style={{ backgroundColor: `rgb(${bcg})` }}>
+    <article className={`color ${index>10 && 'color-light'}`} style={{ backgroundColor: `rgb(${bcg})` }}>
       <p className="percent-value">{weight}%</p>
       <p className="color-value">{hexColor}</p>
     </article>
