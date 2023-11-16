@@ -1,8 +1,26 @@
-# React + Vite
+# React Grocery Cart Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple grocery cart application built using React. It allows users to add, edit, and delete grocery items, and stores the list in the browser's local storage to persist data between sessions.
 
-Currently, two official plugins are available:
+<a href="https://react-grocery-list-cart.netlify.app/" target="_blank">Preview</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Add grocery items to the list
+- Edit existing items in the list
+- Remove items from the list
+- Clear the entire list
+- Alert notifications for different actions
+
+## CRUD 
+
+- Create : Create a new grocery item
+- Read : Read the items from the list of items and localStorage of the browser
+- Update : Update and edit the entered grocery items
+- Delete : Delete and remove the entered grocery items from the list
+
+
+## Dependencies
+
+- React : Javascript library to build UI
+- react-icons : icons library to add icons to the react application.
