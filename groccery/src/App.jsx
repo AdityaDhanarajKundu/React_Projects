@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import List from "./List";
 import Alert from "./Alert";
 
+//function to retrieve data from the local Storage
+function getLocalStorage(){
+  let list = localStorage.getItem('list');
+  if(list){
+    return JSON.parse(list);
+  }else{
+    return [];
+  }
+}
+
 function App() {
   const [name, setName] = useState("");
-  const [list, setList] = useState([]); // list of products added
+  const [list, setList] = useState(getLocalStorage()); // list of products added
   const [isEditing, setIsEditing] = useState(false); // is editing mode on
   const [editID, setEditID] = useState(null); // id of the product being edited
   const [alert, setAlert] = useState({
@@ -51,6 +61,7 @@ function App() {
   function clearList() {
     showAlert(true, "danger", "empty list");
     setList([]);
+    localStorage.clear();
   }
 
   function removeItem(id) {
@@ -64,6 +75,10 @@ function App() {
     setEditID(id);
     setName(specificItem.title);
   }
+
+  useEffect(()=>{
+    localStorage.setItem('list', JSON.stringify(list));
+  },[list]);
 
   return (
     <section className="section-center">
