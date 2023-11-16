@@ -7,30 +7,39 @@ function App() {
   const [list, setList] = useState([]); // list of products added
   const [isEditing, setIsEditing] = useState(false); // is editing mode on
   const [editID, setEditID] = useState(null); // id of the product being edited
-  const [alert, setAlert] = useState({ show: false, msg: "", type: "" }); // alert message for notifications
+  const [alert, setAlert] = useState({
+    show: false,
+    msg: "",
+    type: "",
+  }); // alert message for notifications
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log("hello");
     // conditions
-    if(!name){ // if no name is entered
-      // display alert 
-    }
-    else if(name && isEditing){ // if name is entered and editing mode is on
+    if (!name) {
+      // if no name is entered
+      // display alert
+      showAlert(true, "danger", "please enter value");
+    } else if (name && isEditing) {
+      // if name is entered and editing mode is on
       // edit the product
-    }
-    else{
+    } else {
       // add the product and display alert
-      const newItem = {id: new Date().getTime().toString(), title: name};
+      const newItem = { id: new Date().getTime().toString(), title: name };
       setList([...list, newItem]);
       setName("");
     }
   }
 
+  function showAlert(show = false, type = "", msg = "") {
+    setAlert({ show, type, msg });
+  }
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
-        {alert.show && <Alert />}
+        {alert.show && <Alert {...alert} removeAlert={showAlert} />}
         <h3>Grocery Bud</h3>
         <div className="form-control">
           <input
@@ -44,13 +53,15 @@ function App() {
           </button>
         </div>
       </form>
-      {/* Container to hold the grocery list */}
-      <div className="grocery-container">
-        <List items={list} />
-        <button type="button" className="clear-btn">
-          Clear
-        </button>
-      </div>
+      {/* the grocery container will be rendered only when theres value in the list variable */}
+      {list.length > 0 && (
+        <div className="grocery-container">
+          <List items={list} />
+          <button type="button" className="clear-btn">
+            Clear
+          </button>
+        </div>
+      )}
     </section>
   );
 }
