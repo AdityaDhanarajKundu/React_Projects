@@ -1,7 +1,7 @@
 import {FaEdit, FaTrash} from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-function List({items}){
+function List({items,removeItem}){
     return(
         <div className="grocery-list">
             {items.map((item)=>{
@@ -13,7 +13,7 @@ function List({items}){
                             <button type="button" className='edit-btn'>
                                 <FaEdit />
                             </button>
-                            <button type="button" className='delete-btn'>
+                            <button type="button" className='delete-btn' onClick={()=>removeItem(id)}>
                                 <FaTrash />
                             </button>
                         </div>
@@ -25,7 +25,8 @@ function List({items}){
 }
 
 List.propTypes = {
-    items: PropTypes.array.isRequired
+    items: PropTypes.array.isRequired,
+    removeItem: PropTypes.func.isRequired,
 };
 
 export default List;
