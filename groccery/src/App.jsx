@@ -23,6 +23,18 @@ function App() {
     } else if (name && isEditing) {
       // if name is entered and editing mode is on
       // edit the product
+      setList(
+        list.map((item) => {
+          if (item.id === editID) {
+            return { ...item, title: name };
+          }
+          return item;
+        })
+      );
+      setName("");
+      setEditID(null);
+      setIsEditing(false);
+      showAlert(true, "success", "value changed");
     } else {
       // add the product and display alert
       showAlert(true, "success", "item added to the list");
@@ -46,6 +58,13 @@ function App() {
     setList(list.filter((item) => item.id !== id));
   }
 
+  function editItem(id) {
+    const specificItem = list.find((item) => item.id === id);
+    setIsEditing(true);
+    setEditID(id);
+    setName(specificItem.title);
+  }
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
@@ -66,7 +85,7 @@ function App() {
       {/* the grocery container will be rendered only when theres value in the list variable */}
       {list.length > 0 && (
         <div className="grocery-container">
-          <List items={list} removeItem={removeItem} />
+          <List items={list} removeItem={removeItem} editItem={editItem} />
           <button type="button" className="clear-btn" onClick={clearList}>
             Clear
           </button>
