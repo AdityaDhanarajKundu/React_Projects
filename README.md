@@ -15,3 +15,5 @@ This is done following the course of John Smilga.
 - Slider
 - Random Paragraph Generator
 - Color Generator 
+- Grocery Cart
+- Responsive Submenu UI (Stripe)
