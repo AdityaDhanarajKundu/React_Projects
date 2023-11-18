@@ -1,5 +1,6 @@
 import { useState, useContext, createContext } from "react";
 import sublinks from "./data";
+import PropTypes from 'prop-types';
 
 const AppContext = createContext();
 
@@ -34,5 +35,9 @@ function AppProvider({children}){
 function useGlobalContext(){
     return useContext(AppContext);
 }
+
+AppProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export {AppProvider, useGlobalContext, AppContext};
