@@ -1,11 +1,21 @@
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
 function Navbar(){
     return(
-        <div>
-            <h2>navbar component</h2>
-        </div>
+        <nav className='navbar'>
+            <div className="nav-center">
+                <NavLink to='/'><img src={logo} alt="cocktail db logo" className='logo'/></NavLink>
+                <ul className='nav-links'>
+                    <li>
+                        <NavLink to='/'>Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/about'>About</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     );
 }
 
