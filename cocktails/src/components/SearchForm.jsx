@@ -7,11 +7,15 @@ function SearchForm(){
 
     useEffect(() => {
         searchValue.current.focus();
-    }, []);
+    }, []); 
+    
+    function handleSubmit(e){
+        e.preventDefault();
+    }
     
     return(
         <section className="section search">
-            <form className="search-form">
+            <form className="search-form" onSubmit={handleSubmit}>
                 <div className="form-control">
                     {/* uncontrolled and dynamic handling of input values that is using useRef rather than state values and avoiding use the value attribute */}
                     <label htmlFor="name">search your favorite cocktail</label>
